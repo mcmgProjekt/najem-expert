@@ -1,7 +1,8 @@
 <?php
-    use App\Http\Controllers\Frontend\HomeController;
-    use App\Http\Controllers\Frontend\TermsController;
-    use Tabuna\Breadcrumbs\Trail;
+
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\TermsController;
+use Tabuna\Breadcrumbs\Trail;
 
 /*
  * Frontend Controllers
