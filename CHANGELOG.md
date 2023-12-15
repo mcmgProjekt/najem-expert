@@ -2,7 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [NJM-1.0.0] - 2023-12-15
+
+-  Forked from Laravel Boilerplate
+-  Initial adaptation to the needs of the Najem.expert project
 
 ## [8.3.1] - 2022-01-16
 
@@ -516,7 +519,7 @@ Started from scratch with a blank Laravel 7.\* installation. This release is not
 -   Fix yarn tests
 -   Fix: Socially logged in users get assigned the default role
 
-[unreleased]: https://github.com/rappasoft/laravel-boilerplate/compare/v8.3.1...development
+[NJM-1.0.0]: https://github.com/rappasoft/laravel-boilerplate/compare/v8.3.1...development
 [8.3.1]: https://github.com/rappasoft/laravel-boilerplate/compare/v8.3.0...v8.3.1
 [8.3.0]: https://github.com/rappasoft/laravel-boilerplate/compare/v8.2.2...v8.3.0
 [8.2.2]: https://github.com/rappasoft/laravel-boilerplate/compare/v8.2.1...v8.2.2

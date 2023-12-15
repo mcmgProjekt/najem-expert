@@ -1,28 +1,24 @@
 <?php
+    use App\Http\Controllers\LocaleController;
 
-use App\Http\Controllers\LocaleController;
+    // global routes
+    // common routes used everywhere
 
-/*
- * Global Routes
- *
- * Routes that are used between both frontend and backend.
- */
+    // Switch between the included languages
+    Route::get('lang/{lang}', [LocaleController::class, 'change'])->name('locale.change');
 
-// Switch between the included languages
-Route::get('lang/{lang}', [LocaleController::class, 'change'])->name('locale.change');
+    // public frontend routes
+    Route::group(['as' => 'public.'], function () {
+        includeRouteFiles(__DIR__.'/public/');
+    });
 
-/*
- * Frontend Routes
- */
-Route::group(['as' => 'frontend.'], function () {
-    includeRouteFiles(__DIR__.'/frontend/');
-});
+    // secured frontend routes
+    Route::group(['prefix' => 'app', 'as' => 'frontend.'], function () {
+        includeRouteFiles(__DIR__.'/frontend/');
+    });
 
-/*
- * Backend Routes
- *
- * These routes can only be accessed by users with type `admin`
- */
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
-    includeRouteFiles(__DIR__.'/backend/');
-});
+    // backend routes
+    // only accessed by users with type `admin`
+    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
+        includeRouteFiles(__DIR__.'/backend/');
+    });
